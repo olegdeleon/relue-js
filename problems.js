@@ -19,9 +19,20 @@ function sumOfMultiplesOf3and5() {
 // Find the sum of the even-valued terms in the sequence not exceeding 4 million
 
 function evenFibonacci() {
-  var fibonacciSum = 0;
-  for(var i = 0; i < 4000000; i++){
-    fibonacciSum += i;
+  var temp;
+  var evenSum = 0;
+  var a = 0;
+  var b = 1;
+
+  while(b < 4000000){
+    temp = a;
+    a = b;
+    b += temp;
+
+    if((b & 1) === 0){
+      evenSum += b;
+    }
   }
-  return fibonacciSum;
+
+  return evenSum;
 }
